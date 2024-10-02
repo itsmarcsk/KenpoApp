@@ -25,3 +25,20 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+## Crear docker
+
+Crear la imagen con 
+
+```bash
+docker build -t angular-image
+```
+
+Crear el contenedor con
+
+```bash
+docker run --name angular-container -d -p 4201:4200 angular-image
+```
+
+[Link](http://localhost:4201) para acceder al servicio local 
