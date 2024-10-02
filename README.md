@@ -32,7 +32,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Crear la imagen con 
 
 ```bash
-docker build -t angular-image
+docker build -t angular-image .
 ```
 
 Crear el contenedor con
