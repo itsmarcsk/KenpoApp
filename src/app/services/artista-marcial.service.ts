@@ -41,4 +41,19 @@ export class ArtistaMarcialService {
       })
     );
   }
+
+  // Método para guardar el DNI en localStorage
+  setDni(dni: string): void {
+    localStorage.setItem('dni', dni);
+  }
+
+  // Método para obtener el DNI desde localStorage
+  getDni(): string | null {
+    return localStorage.getItem('dni');
+  }
+
+  // Método para limpiar el DNI de localStorage (por ejemplo, al hacer logout)
+  clearDni(): void {
+    localStorage.removeItem('dni');
+  }
 }
