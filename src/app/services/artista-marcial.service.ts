@@ -56,4 +56,25 @@ export class ArtistaMarcialService {
   clearDni(): void {
     localStorage.removeItem('dni');
   }
+
+  isValidDni(dni: string): boolean {
+    // Primero, validar el formato general: 8 dígitos y una letra
+    const dniRegex = /^\d{8}[A-Za-z]$/;
+    if (!dniRegex.test(dni)) {
+      return false;
+    }
+
+    // Lista de letras válidas en orden
+    const validLetters = "TRWAGMYFPDXBNJZSQVHLCKE";
+
+    // Extraer los dígitos y la letra del DNI
+    const dniNumber = parseInt(dni.slice(0, 8), 10);
+    const dniLetter = dni.slice(8).toUpperCase();
+
+    // Calcular la letra correcta para los 8 dígitos
+    const correctLetter = validLetters[dniNumber % 23];
+
+    // Verificar si la letra del DNI es correcta
+    return dniLetter === correctLetter;
+  }
 }
