@@ -1,0 +1,101 @@
+<div class="register">
+  <form class="custom-form" (ngSubmit)="register()">
+    <h1>Register</h1>
+
+    <!-- Formulario para DNI -->
+    <div *ngIf="!isDniValid">
+      <input
+        type="text"
+        [(ngModel)]="dni"
+        name="dni"
+        placeholder="DNI"
+        required="required"
+        (ngModelChange)="checkDni()"
+      />
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    </div>
+
+    <!-- Formulario para los demás campos, solo se muestra si el DNI es válido -->
+    <div *ngIf="isDniValid">
+      <input
+        type="text"
+        [(ngModel)]="nombre"
+        name="nombre"
+        placeholder="Nombre"
+        required="required"
+      />
+      <input
+        type="text"
+        [(ngModel)]="apellidos"
+        name="apellidos"
+        placeholder="Apellidos"
+        required="required"
+      />
+      <input
+        type="date"
+        [(ngModel)]="fechaNacimiento"
+        name="fechaNacimiento"
+        placeholder="Fecha de nacimiento"
+        required="required"
+      />
+      <input
+        type="text"
+        [(ngModel)]="pais"
+        name="pais"
+        placeholder="País"
+        required="required"
+      />
+      <input
+        type="text"
+        [(ngModel)]="provincia"
+        name="provincia"
+        placeholder="Provincia"
+        required="required"
+      />
+      <input
+        type="text"
+        [(ngModel)]="comunidadAutonoma"
+        name="comunidadAutonoma"
+        placeholder="Comunidad Autónoma"
+        required="required"
+      />
+      <input
+        type="number"
+        [(ngModel)]="escuelaId"
+        name="escuelaId"
+        placeholder="Escuela ID"
+        required="required"
+      />
+      <input
+        type="text"
+        [(ngModel)]="cinturon"
+        name="cinturon"
+        placeholder="Cinturón"
+        required="required"
+      />
+      <input
+        type="text"
+        [(ngModel)]="grado"
+        name="grado"
+        placeholder="Grado"
+        required="required"
+      />
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="Contraseña"
+        required="required"
+      />
+      <input
+        type="password"
+        [(ngModel)]="confirmPassword"
+        name="confirmPassword"
+        placeholder="Repetir Contraseña"
+        required="required"
+      />
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</div>

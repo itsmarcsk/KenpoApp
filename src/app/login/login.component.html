@@ -1,0 +1,30 @@
+<div class="login">
+  <form class="custom-form" (ngSubmit)="login()">
+    <h1>Login</h1>
+
+    <!-- Formulario para DNI -->
+    <div *ngIf="!isDniValid">
+      <input
+        type="text"
+        [(ngModel)]="dni"
+        name="dni"
+        placeholder="DNI"
+        required="required"
+        (ngModelChange)="checkDni()"
+      />
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    </div>
+
+    <!-- Formulario para Contraseña, solo se muestra si el DNI es válido -->
+    <div *ngIf="isDniValid">
+      <input
+        type="password"
+        [(ngModel)]="contrasena"
+        name="contrasena"
+        placeholder="Password"
+        required="required"
+      />
+      <button type="submit">Log in</button>
+    </div>
+  </form>
+</div>
