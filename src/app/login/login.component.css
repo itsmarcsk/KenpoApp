@@ -1,0 +1,17 @@
+.card{
+    background: rgb(252, 165, 83);
+}
+
+.fondo-color{
+    background: rgb(0, 7, 29);
+    border-color: rgb(0, 0, 0);
+}
+
+a {
+color: black; /* Cambia el color del texto a negro */
+text-decoration: none; /* Quita el subrayado del enlace si lo deseas */
+}
+  
+a:hover {
+color: #ffffff; /* Color ligeramente gris al pasar el ratón, opcional */
+}
