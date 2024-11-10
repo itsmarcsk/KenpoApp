@@ -13,12 +13,19 @@ export class LoginComponent {
   dni: string = '';
   contrasena: string = '';
   errorMessage: string = '';
-
+  
   constructor(
     private artistaMarcialService: ArtistaMarcialService, // Inyectamos el servicio
     private router: Router // Para redirigir, si es necesario
-  ) {}
+    ) {
+    this.comprobarLogin()
+  }
 
+  comprobarLogin(){
+    if(this.artistaMarcialService.getDni() !== null){
+      this.router.navigate(['/home']);
+    }
+  }
   onLogin() {
     if (this.dni && this.contrasena) {
       // Llamamos al método comprobarContrasena

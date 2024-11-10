@@ -20,6 +20,10 @@ export const routes: Routes = [
         path: 'updatepassword',
         component: UpdatepasswordComponent
     },{
+        path:'',
+        redirectTo:'login',
+        pathMatch:'full'
+    },{
         path:'**',
         component: PaginanoencontradaComponent
     }
