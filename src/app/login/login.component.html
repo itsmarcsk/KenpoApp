@@ -1,26 +1,26 @@
 <div class="container d-flex justify-content-center align-items-center" >
     <div class="card p-4 shadow" style="width: 100%; max-width: 400px;">
-    <h2 class="text-center mb-4">Iniciar Sesión</h2>
-    
-    <!-- Campo de DNI -->
-    <div class="form-group mb-3">
-        <label for="dni">DNI</label>
-        <input type="text" class="form-control" id="dni" placeholder="Introduce tu DNI">
-    </div>
+        <h2 class="text-center mb-4">Iniciar Sesión</h2>
+        
+        <!-- Campo de DNI -->
+        <div class="form-group mb-3">
+            <label for="dni">DNI</label>
+            <input type="text" class="form-control" id="dni" placeholder="Introduce tu DNI">
+        </div>
 
-    <!-- Campo de Contraseña -->
-    <div class="form-group mb-3">
-        <label for="password">Contraseña</label>
-        <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña">
-    </div>
+        <!-- Campo de Contraseña -->
+        <div class="form-group mb-3">
+            <label for="password">Contraseña</label>
+            <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña">
+        </div>
 
-    <!-- Botón de inicio de sesión -->
-    <button type="button" class="btn btn-primary w-100 mb-3 fondo-color" (click)="onLogin()">Iniciar Sesión</button>
+        <!-- Botón de inicio de sesión -->
+        <button type="button" class="btn btn-primary w-100 mb-3 fondo-color" (click)="onLogin()">Iniciar Sesión</button>
 
-    <!-- Enlaces adicionales -->
-    <div class="text-center">
-        <a routerLink="/register" class="d-block mb-2">¿No tienes cuenta? Regístrate</a>
-        <a routerLink="/forgot-password" class="d-block">¿Olvidaste tu contraseña?</a>
-    </div>
+        <!-- Enlaces adicionales -->
+        <nav class="text-center">
+            <a routerLink="/register" class="d-block mb-2">¿No tienes cuenta? Regístrate</a>
+            <a routerLink="/updatepassword" class="d-block">¿Olvidaste tu contraseña?</a>
+        </nav>
     </div>
 </div>

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ArtistaMarcialService } from '../services/artista-marcial.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [  ],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

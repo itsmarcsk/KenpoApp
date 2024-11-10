@@ -1,1 +1,19 @@
-<p>register works!</p>
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="card p-4 shadow" style="width: 100%; max-width: 400px;">
+    <h2 class="text-center mb-4">Registro</h2>
+
+    <!-- Campo de DNI -->
+    <div class="form-group mb-3">
+        <label for="dni">DNI</label>
+        <input type="text" class="form-control" id="dni" placeholder="Introduce tu DNI" required>
+    </div>
+
+    <!-- Botón de registro -->
+    <button type="button" class="btn btn-primary w-100 mb-3 fondo-color" (click)="guardarDni()">Registrar</button>
+
+    <!-- Enlace de redirección al login -->
+    <div class="text-center">
+        <a routerLink="/login" class="d-block mb-2">¿Ya tienes cuenta? Inicia sesión</a>
+    </div>
+    </div>
+</div>
