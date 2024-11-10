@@ -1,13 +1,36 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <title>KenpoApp</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+
+    html, body {
+      overflow: hidden;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: rgb(173,190,106);
+      background: linear-gradient(95deg, rgba(173,190,106,1) 0%, rgba(121,30,9,1) 32%, rgba(226,244,27,1) 91%, rgba(255,169,0,1) 100%);
+      background-size: cover;
+    }
+    .margin-top-custom {
+      margin-top: 60px; /* O el valor que desees */
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
+  <div class="container margin-top-custom">
+    <h1 class="text-center text-white">KenpoLink</h1>
+    <img class="d-block mx-auto" src="assets/KenpoLinkLogo.png" alt="KenpoLogo" width="200px">
+    <p class="text-center center p-3 font-weight-bold" style="font-size: 1.5rem;">Bienvenido a KenpoLink!</p>
+    <app-root></app-root>
+</div>
 </body>
 </html>
