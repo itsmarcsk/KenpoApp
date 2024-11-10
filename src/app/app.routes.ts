@@ -5,23 +5,30 @@ import { PaginanoencontradaComponent } from './paginanoencontrada/paginanoencont
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
+import { IndexComponent } from './index/index.component';
 
 export const routes: Routes = [
     {
-        path:'login',
-        component: LoginComponent
-    },{
-        path:'register',
-        component: RegisterComponent
+        path: 'index',
+        component: IndexComponent,
+        children:[
+            {
+                path:'login',
+                component: LoginComponent
+            },{
+                path:'register',
+                component: RegisterComponent
+            },{
+                path: 'updatepassword',
+                component: UpdatepasswordComponent
+            }
+        ]
     },{
         path:'home',
         component: HomeComponent
     },{
-        path: 'updatepassword',
-        component: UpdatepasswordComponent
-    },{
         path:'',
-        redirectTo:'login',
+        redirectTo:'index/login',
         pathMatch:'full'
     },{
         path:'**',

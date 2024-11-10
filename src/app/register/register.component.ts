@@ -30,7 +30,7 @@ export class RegisterComponent {
           // Si el DNI existe, guardamos en sessionStorage y redirigimos
           sessionStorage.setItem('dni', dni);
           alert('DNI encontrado. Redirigiendo a la actualización de contraseña...');
-          this.router.navigate(['/updatepassword']);  // Redirige al componente para actualizar la contraseña
+          this.router.navigate(['/index/updatepassword']);  // Redirige al componente para actualizar la contraseña
         } else {
           // Si el DNI no existe, mostramos un mensaje de error
           alert('El DNI no está registrado. Por favor, verifica el DNI.');
