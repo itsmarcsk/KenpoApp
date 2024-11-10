@@ -43,7 +43,7 @@ export class UpdatepasswordComponent {
         response => {
           alert('Contraseña actualizada exitosamente.');
           localStorage.setItem('dni', dni);  // Guardar el DNI en localStorage
-          this.router.navigate(['/login']);  // Redirigir al login después de actualizar la contraseña
+          this.router.navigate(['/home']);  // Redirigir al login después de actualizar la contraseña
         },
         error => {
           alert('Hubo un error al actualizar la contraseña.');
