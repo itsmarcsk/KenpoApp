@@ -1,8 +1,11 @@
-body {
+body#index {
     background: rgb(173,190,106);
     background: linear-gradient(95deg, rgba(173,190,106,1) 0%, rgba(255,106,71,1) 34%, rgba(226,244,27,1) 91%, rgba(255,169,0,1) 100%);
     background-size: cover;
+    
 }
+
+
 .margin-top-custom {
     margin-top: 60px; /* O el valor que desees */
 }

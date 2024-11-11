@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { ArtistaMarcialService } from '../services/artista-marcial.service';
 
 @Component({
   selector: 'app-updatepassword',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet],
   templateUrl: './updatepassword.component.html',
   styleUrl: './updatepassword.component.css'
 })
