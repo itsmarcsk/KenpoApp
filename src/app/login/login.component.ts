@@ -27,23 +27,29 @@ export class LoginComponent {
     }
   }
   onLogin() {
-    if (this.dni && this.contrasena) {
-      // Llamamos al método comprobarContrasena
-      this.artistaMarcialService.comprobarContrasena(this.dni, this.contrasena).subscribe(
-        (response) => {
-          // Si la respuesta es positiva (por ejemplo, mensaje de éxito)
-          if (response.message === 'success') {
-            this.router.navigate(['/home']); // Redirige al home o página correspondiente
-          } else {
-            this.errorMessage = 'Datos incorrectos. Intenta de nuevo.'; // Muestra un mensaje de error
-          }
-        },
-        (error) => {
-          this.errorMessage = 'Error en la conexión o en los datos proporcionados.';
-        }
-      );
-    } else {
-      this.errorMessage = 'Por favor, ingresa el DNI y la contraseña.';
+    if (!this.artistaMarcialService.isValidDni(this.dni)) {
+      alert('El formato del DNI no es válido. Asegúrate de que esté en el formato correcto.');
+      return;
     }
-  }
+    if (this.dni && this.contrasena) {
+        // Comprobar si el formato del DNI es válido
+
+        // Llamamos al método comprobarContrasena
+        this.artistaMarcialService.comprobarContrasena(this.dni, this.contrasena).subscribe(
+            (response) => {
+                // Si la respuesta es positiva (por ejemplo, mensaje de éxito)
+                if (response.message === 'success') {
+                    this.router.navigate(['/home']); // Redirige al home o página correspondiente
+                } else {
+                    this.errorMessage = 'Datos incorrectos. Intenta de nuevo.'; // Muestra un mensaje de error
+                }
+            },
+            (error) => {
+                this.errorMessage = 'Error en la conexión o en los datos proporcionados.';
+            }
+        );
+    } else {
+        this.errorMessage = 'Por favor, ingresa el DNI y la contraseña.';
+    }
+}
 }
