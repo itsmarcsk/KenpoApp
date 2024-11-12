@@ -23,10 +23,18 @@ export class ArtistaMarcialService {
     return this.http.get<{ message: string }>(url);
   }
 
-  updateContrasena(dni: string, newPassword: string): Observable<any> {
-    const url = `${this.apiUrl}/${dni}/contrasena`;
-    return this.http.put(url, { new_password: newPassword });
-  }
+  updateContrasena(dni: string, newPassword: string): Observable<boolean> {
+    const url = `${this.apiUrl}/artistas-marciales/update-password`;
+    const params = new HttpParams()
+      .set('dni', dni)
+      .set('new_password', newPassword);
+
+    return this.http.put<boolean>(url, {}, { params })
+      .pipe(
+        map(response => response === true),
+        catchError(() => of(false)) // Si hay un error, devuelve `false`
+      );
+  }  
 
   checkArtistaMarcialExists(dni: string): Observable<boolean> {
     const url = `${this.apiUrl}/artistas-marciales/${dni}`;
