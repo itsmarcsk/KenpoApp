@@ -1,15 +1,15 @@
 import { Mensaje } from './mensaje.model';
 
 export class DiccionarioInsertar {
-  id: string;
-  maestroId: number;
-  aprendizId: number;
+  _id: string;
+  maestro_id: number;
+  aprendiz_id: number;
   mensajes: Mensaje[];
 
-  constructor(id: string, maestroId: number, aprendizId: number, mensajes: Mensaje[]) {
-    this.id = id;
-    this.maestroId = maestroId;
-    this.aprendizId = aprendizId;
+  constructor(_id: string, maestro_id: number, aprendiz_id: number, mensajes: Mensaje[]) {
+    this._id = _id;
+    this.maestro_id = maestro_id;
+    this.aprendiz_id = aprendiz_id;
     this.mensajes = mensajes;
   }
 }

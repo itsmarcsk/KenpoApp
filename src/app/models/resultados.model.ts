@@ -1,13 +1,13 @@
 export class Resultados {
   id: number;
-  artistaId: number;
-  competicionId: number;
+  artista_id: number;
+  competicion_id: number;
   puesto: number;
 
-  constructor(id: number, artistaId: number, competicionId: number, puesto: number) {
+  constructor(id: number, artista_id: number, competicion_id: number, puesto: number) {
     this.id = id;
-    this.artistaId = artistaId;
-    this.competicionId = competicionId;
+    this.artista_id = artista_id;
+    this.competicion_id = competicion_id;
     this.puesto = puesto;
   }
 

@@ -1,8 +1,8 @@
 export class MaterialItem {
-    materialId: number;
+  material_id: number;
   
-    constructor(materialId: number) {
-      this.materialId = materialId;
+    constructor(material_id: number) {
+      this.material_id = material_id;
     }
   }
   

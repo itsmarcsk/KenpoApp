@@ -1,10 +1,10 @@
 export class Mensaje {
-    autorId: number;
+  autor_id: number;
     contenido: string;
     timestamp: Date;
   
-    constructor(autorId: number, contenido: string, timestamp: Date) {
-      this.autorId = autorId;
+    constructor(autor_id: number, contenido: string, timestamp: Date) {
+      this.autor_id = autor_id;
       this.contenido = contenido;
       this.timestamp = timestamp;
     }
