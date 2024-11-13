@@ -38,6 +38,7 @@ export class PerfilComponent implements OnInit {
     this.artistaMarcialService.readArtistaMarcial(dni).subscribe(
       (artista: ArtistaMarcial) => {
         this.artistaMarcial = artista;
+        console.log('Artista marcial obtenido:', artista);
         this.obtenerEscuela(artista.escuela_id);
       },
       (error) => {
