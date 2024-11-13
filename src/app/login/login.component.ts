@@ -23,7 +23,7 @@ export class LoginComponent {
 
   comprobarLogin(){
     if(this.artistaMarcialService.getDni() !== null){
-      this.router.navigate(['/home']);
+      this.router.navigate(['/home/inicio']);
     }
   }
   onLogin() {
@@ -39,7 +39,7 @@ export class LoginComponent {
             (response) => {
                 // Si la respuesta es positiva (por ejemplo, mensaje de éxito)
                 if (response.message === 'success') {
-                    this.router.navigate(['/home']); // Redirige al home o página correspondiente
+                    this.router.navigate(['/home/inicio']); // Redirige al home o página correspondiente
                 } else {
                     this.errorMessage = 'Datos incorrectos. Intenta de nuevo.'; // Muestra un mensaje de error
                 }
