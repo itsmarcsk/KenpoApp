@@ -2,7 +2,7 @@
     <!-- Título -->
     <div class="row mb-4">
         <div class="col">
-            <h2 class="text-center">Perfil de {{ artistaMarcial?.nombre }} {{ artistaMarcial?.apellidos }}</h2>
+            <h2 class="text-center">Perfil de {{ artistaMarcial.nombre }} {{ artistaMarcial.apellidos }}</h2>
         </div>
     </div>
 
@@ -12,11 +12,11 @@
             <div class="card mb-3 h-100">
             <div class="card-body text-center">
                 <h5 class="card-title">Información Personal</h5>
-                <p><strong>DNI:</strong> {{ artistaMarcial?.dni }}</p>
-                <p><strong>Fecha de Nacimiento:</strong> {{ artistaMarcial?.fecha_nacimiento }}</p>
-                <p><strong>País:</strong> {{ artistaMarcial?.pais }}</p>
-                <p><strong>Provincia:</strong> {{ artistaMarcial?.provincia }}</p>
-                <p><strong>Comunidad Autónoma:</strong> {{ artistaMarcial?.comunidad_autonoma }}</p>
+                <p><strong>DNI:</strong> {{ artistaMarcial.dni }}</p>
+                <p><strong>Fecha de Nacimiento:</strong> {{ artistaMarcial.fecha_nacimiento }}</p>
+                <p><strong>País:</strong> {{ artistaMarcial.pais }}</p>
+                <p><strong>Provincia:</strong> {{ artistaMarcial.provincia }}</p>
+                <p><strong>Comunidad Autónoma:</strong> {{ artistaMarcial.comunidad_autonoma }}</p>
             </div>
             </div>
         </div>
@@ -26,9 +26,9 @@
             <div class="card mb-3 h-100">
             <div class="card-body text-center">
                 <h5 class="card-title">Escuela</h5>
-                <p><strong>Escuela:</strong> {{ escuela?.nombre }}</p>
-                <p><strong>Cinturón:</strong> {{ artistaMarcial?.cinturon }}</p>
-                <p><strong>Grado:</strong> {{ artistaMarcial?.grado }}</p>
+                <p><strong>Escuela:</strong> {{ escuela.nombre }}</p>
+                <p><strong>Cinturón:</strong> {{ artistaMarcial.cinturon }}</p>
+                <p><strong>Grado:</strong> {{ artistaMarcial.grado }}</p>
             </div>
             </div>
         </div>

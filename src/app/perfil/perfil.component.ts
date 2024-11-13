@@ -13,10 +13,8 @@ import { Escuela } from '../models/escuela.model';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-  artistaMarcial!: ArtistaMarcial;
-  escuela!: Escuela;
-  formattedFechaNacimiento: string = '';  // Nueva variable para la fecha formateada
-  comunidadAutonoma: string = ''; // Nueva variable para la fecha
+  artistaMarcial: ArtistaMarcial  = new ArtistaMarcial(0,"","","", new Date(), "", "", "","","","","");
+  escuela: Escuela = new Escuela(0,"","","","");
   constructor(
     private artistaMarcialService: ArtistaMarcialService,private escuelaService: EscuelaService,private router: Router
   ) {
