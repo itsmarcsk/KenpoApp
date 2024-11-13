@@ -1,1 +1,46 @@
-<p>perfil works!</p>
+<div class="container mt-4">
+    <!-- Título -->
+    <div class="row mb-4">
+        <div class="col">
+            <h2 class="text-center">Perfil de {{ artistaMarcial?.nombre }} {{ artistaMarcial?.apellidos }}</h2>
+        </div>
+    </div>
+
+    <!-- Información del Artista Marcial -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-3 h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Información Personal</h5>
+                <p><strong>DNI:</strong> {{ artistaMarcial?.dni }}</p>
+                <p><strong>Fecha de Nacimiento:</strong> {{ artistaMarcial?.fecha_nacimiento }}</p>
+                <p><strong>País:</strong> {{ artistaMarcial?.pais }}</p>
+                <p><strong>Provincia:</strong> {{ artistaMarcial?.provincia }}</p>
+                <p><strong>Comunidad Autónoma:</strong> {{ artistaMarcial?.comunidad_autonoma }}</p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Información de la Escuela -->
+        <div class="col-md-6">
+            <div class="card mb-3 h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Escuela</h5>
+                <p><strong>Escuela:</strong> {{ escuela?.nombre }}</p>
+                <p><strong>Cinturón:</strong> {{ artistaMarcial?.cinturon }}</p>
+                <p><strong>Grado:</strong> {{ artistaMarcial?.grado }}</p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón de Cambio de Contraseña -->
+    <div class="row">
+        <div class="col text-center mt-5">
+        <button routerLink="/index/register" routerLinkActive="activeButton" class="btn btn-danger bg-primary-custom">Cambiar Contraseña</button>
+        </div>
+        <div class="col text-center mt-5">
+            <button  (click)="cerrarSesion()" class="btn btn-danger bg-primary-custom">Cerrar Sesion</button>
+        </div>
+    </div>
+</div>

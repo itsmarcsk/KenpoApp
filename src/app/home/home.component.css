@@ -2,7 +2,8 @@
 
 .accent-color { color: #9966CC; }
         
-.bg-primary-custom { background-color: #50C878; }
+.bg-primary-custom { background-color: #bb0404; }
+
         
 .btn-accent { background-color: #9966CC; color: #fff; }
         
@@ -17,3 +18,4 @@
 .custom-shadow {
     box-shadow: 0 4px 6px rgba(0, 128, 0, 0.7); /* Sombra verde más oscura */
 }
+

@@ -3,11 +3,11 @@ export class ArtistaMarcial {
   dni: string;
   nombre: string;
   apellidos: string;
-  fechaNacimiento: string; // Usaremos una cadena ISO para la fecha
+  fecha_nacimiento: Date; // Usaremos una cadena ISO para la fecha
   pais: string;
   provincia: string;
-  comunidadAutonoma: string;
-  escuelaId: number;
+  comunidad_autonoma: string;
+  escuela_id: string;
   cinturon: string;
   grado: string;
   contrasena?: string; // Campo opcional
@@ -17,11 +17,11 @@ export class ArtistaMarcial {
     dni: string,
     nombre: string,
     apellidos: string,
-    fechaNacimiento: string,
+    fecha_nacimiento: Date,
     pais: string,
     provincia: string,
-    comunidadAutonoma: string,
-    escuelaId: number,
+    comunidad_autonoma: string,
+    escuela_id: string,
     cinturon: string,
     grado: string,
     contrasena?: string
@@ -30,11 +30,11 @@ export class ArtistaMarcial {
     this.dni = dni;
     this.nombre = nombre;
     this.apellidos = apellidos;
-    this.fechaNacimiento = fechaNacimiento;
+    this.fecha_nacimiento = fecha_nacimiento;
     this.pais = pais;
     this.provincia = provincia;
-    this.comunidadAutonoma = comunidadAutonoma;
-    this.escuelaId = escuelaId;
+    this.comunidad_autonoma = comunidad_autonoma;
+    this.escuela_id = escuela_id;
     this.cinturon = cinturon;
     this.grado = grado;
     this.contrasena = contrasena;
@@ -48,7 +48,7 @@ export class ArtistaMarcial {
 
   // Método de ejemplo para calcular la edad en base a la fecha de nacimiento
   getEdad(): number {
-    const birthDate = new Date(this.fechaNacimiento);
+    const birthDate = new Date(this.fecha_nacimiento);
     const today = new Date();
     let edad = today.getFullYear() - birthDate.getFullYear();
     const monthDifference = today.getMonth() - birthDate.getMonth();
