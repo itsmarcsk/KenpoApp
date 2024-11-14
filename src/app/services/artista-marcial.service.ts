@@ -18,10 +18,22 @@ export class ArtistaMarcialService {
   }
 
   // Llamada para comprobar la contraseña de un artista marcial
-  comprobarContrasena(dni: string, contrasena: string): Observable<{ message: string }> {
+  comprobarContrasena(dni: string, contrasena: string): Observable<boolean> {
     const url = `${this.apiUrl}/artistas-marciales/${dni}/${contrasena}`;
-    return this.http.get<{ message: string }>(url);
+  
+    return this.http.get<boolean>(url).pipe(
+      map(response => {
+        // Retorna directamente la respuesta booleana
+        return response;
+      }),
+      catchError((error) => {
+        // Si ocurre un error en la llamada al backend
+        console.error('Error al comprobar la contraseña', error);
+        return of(false); // En caso de error, devolvemos false
+      })
+    );
   }
+  
 
   updateContrasena(dni: string, newPassword: string): Observable<boolean> {
     const url = `${this.apiUrl}/artistas-marciales/update-password`;
