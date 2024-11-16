@@ -51,10 +51,14 @@ export class EventosComponent {
 
   // Obtener imagen usando el servicio de multimedia
   getImagen(imagenId: string): void {
-    this.multimediaService.getImagen(imagenId).subscribe((blob: Blob) => {
-      const imageUrl = URL.createObjectURL(blob);
-      this.imagenes.set(imagenId, imageUrl);
-      console.log(imageUrl);
-    });
-  }
+    this.multimediaService.getImagen(imagenId).subscribe((blob: Blob) => {//-
+      const imageUrl = URL.createObjectURL(blob);//-
+      this.imagenes.set(imagenId, imageUrl);//-
+      console.log(imageUrl);//-
+      //const imagenElement = document.getElementById('imagen');//-
+    const imagenElement = document.getElementById('imagen') as HTMLImageElement;//+
+    if (imagenElement) {//+
+      imagenElement.src = imageUrl;
+    }});//-
+    }//+
 }
