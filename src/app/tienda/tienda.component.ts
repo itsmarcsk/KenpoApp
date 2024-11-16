@@ -34,9 +34,11 @@ export class TiendaComponent {
           // Llamar al servicio para obtener la imagen
           //this.getImagen(material.id_imagen);
           console.log(material);
+          console.log(material._id);
           // Crear el div
           
           const div1 = document.createElement('div');
+          
           div1.classList.add('col-lg-6', 'col-sm-6', 'mb-4');
           div1.style.maxWidth = '400px'; // Establecer el ancho máximo
           div1.style.margin = '0 auto'; // Centrar horizontalmente
@@ -82,7 +84,8 @@ export class TiendaComponent {
           const btnCesta = document.createElement('button');
           btnCesta.textContent = 'Añadir a la cesta';
           btnCesta.classList.add('btn', 'btn-primary', 'w-100', 'mt-auto');
-          
+
+          btnCesta.addEventListener('click', () => this.anadirACesta(material._id));
           divTextos.append(h5, p, pPrecio, btnCesta);
           
         });
@@ -101,5 +104,10 @@ export class TiendaComponent {
       this.materiales = data;
       console.log(this.materiales);
     });
+  }
+
+  //FIXME metodo para añadir objetos a la cesta
+  anadirACesta(id : string){
+    console.log("hola " + id);
   }
 }
