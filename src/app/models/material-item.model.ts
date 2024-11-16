@@ -1,8 +1,10 @@
 export class MaterialItem {
-  material_id: number;
+  material_id: string;
+  cantidad: number;
   
-    constructor(material_id: number) {
+    constructor(material_id: string, cantidad: number) {
       this.material_id = material_id;
+      this.cantidad = cantidad;
     }
   }
   
