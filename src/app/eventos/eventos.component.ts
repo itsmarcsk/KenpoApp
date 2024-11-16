@@ -30,8 +30,49 @@ export class EventosComponent {
         this.eventos = data.eventos; // Asignamos el array de eventos
         this.eventos.forEach((evento) => {
           // Llamar al servicio para obtener la imagen
-          this.getImagen(evento.id_imagen);
+          //this.getImagen(evento.id_imagen);
           console.log(evento);
+          // Crear el div
+          const div = document.createElement('div');
+          div.classList.add('container', 'mt-4');
+          const div1 = document.createElement('div');
+          div1.classList.add('row', 'align-items-center', 'mb-4', 'shadow', 'p-3', 'bg-white', 'rounded', 'position-relative',);
+          div.appendChild(div1);
+          const divImage = document.createElement('div');
+          divImage.classList.add('w-auto', 'h-auto');
+          const img = document.createElement('img');
+          img.style.width = '200px';
+          img.style.height = '200px';
+          img.alt = "Imagen del evento: " + evento.titulo;
+          this.multimediaService.getImagen(evento.id_imagen).subscribe((blob: Blob) => {
+            // Convertir el Blob a una URL de imagen
+            const imageUrl = URL.createObjectURL(blob);
+            img.src = imageUrl;
+            
+          });
+          divImage.appendChild(img);
+          const divTextos = document.createElement('div');
+          divTextos.classList.add('col-md-8', 'd-flex', 'flex-column');
+          div1.append(divImage, divTextos)
+          const titulo = document.createElement('h4');
+          titulo.textContent = evento.titulo;
+          titulo.classList.add('font-weight-bold','mb-4');
+          
+          const fecha = document.createElement('span');
+          fecha.textContent = evento.fecha;
+          fecha.classList.add('mb-1');
+          
+          const lugar = document.createElement('span');
+          lugar.textContent = evento.lugar;
+          lugar.classList.add('mb-3', 'mt-auto');
+          
+          const descripcion = document.createElement('p');
+          descripcion.textContent = evento.descripcion;
+          descripcion.classList.add('mb-2', 'text-muted');
+          
+          divTextos.append(titulo, fecha, lugar, descripcion);
+          // Asegúrate de que el div se agregue al DOM
+          document.body.appendChild(div); // O agrega el div a un contenedor específico
         });
       } else {
         console.error('La propiedad "eventos" no es un array:', data.eventos);
@@ -50,15 +91,38 @@ export class EventosComponent {
   }
 
   // Obtener imagen usando el servicio de multimedia
-  getImagen(imagenId: string): void {
-    this.multimediaService.getImagen(imagenId).subscribe((blob: Blob) => {//-
-      const imageUrl = URL.createObjectURL(blob);//-
-      this.imagenes.set(imagenId, imageUrl);//-
-      console.log(imageUrl);//-
-      //const imagenElement = document.getElementById('imagen');//-
-    const imagenElement = document.getElementById('imagen') as HTMLImageElement;//+
-    if (imagenElement) {//+
-      imagenElement.src = imageUrl;
-    }});//-
-    }//+
+  // Método para obtener la imagen y mostrarla
+// Método para obtener la imagen y mostrarla con tamaño
+  /*getImagen(imagenId: string): void {
+    this.multimediaService.getImagen(imagenId).subscribe((blob: Blob) => {
+        // Convertir el Blob a una URL de imagen
+        const imageUrl = URL.createObjectURL(blob);
+        
+        // Crear un nuevo elemento <img>
+        const img = document.createElement('img');
+        
+        // Establecer la URL de la imagen como el atributo 'src' del <img>
+        img.src = imageUrl;
+        
+        // Establecer el tamaño de la imagen (puedes ajustar estos valores a tu gusto)
+        img.style.width = '300px';  // Ancho de la imagen
+        img.style.height = 'auto';  // Altura automática para mantener la proporción
+        img.style.objectFit = 'cover';  // Ajustar el contenido de la imagen al contenedor
+        
+        // También puedes establecer el texto alternativo (opcional)
+        img.alt = "Imagen del evento"; // Texto alternativo
+        
+        // Crear un contenedor para la imagen
+        const div = document.createElement('div');
+        div.classList.add('evento-imagen-container'); // Agregar una clase para el contenedor
+        
+        // Agregar la imagen al contenedor
+        div.appendChild(img);
+        
+        // Finalmente, agregar el contenedor al DOM (por ejemplo, al body o a un contenedor específico)
+        document.body.appendChild(div); // O puedes agregarlo a otro contenedor, como '.eventos-container'
+    });
+  }*/
+
+
 }
