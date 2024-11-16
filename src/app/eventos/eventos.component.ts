@@ -16,7 +16,7 @@ export class EventosComponent {
   constructor(
     private eventosService: EventosService,
     private multimediaService: MultimediaService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getEventos();
@@ -48,7 +48,7 @@ export class EventosComponent {
             // Convertir el Blob a una URL de imagen
             const imageUrl = URL.createObjectURL(blob);
             img.src = imageUrl;
-            
+
           });
           divImage.appendChild(img);
           const divTextos = document.createElement('div');
@@ -56,20 +56,20 @@ export class EventosComponent {
           div1.append(divImage, divTextos)
           const titulo = document.createElement('h4');
           titulo.textContent = evento.titulo;
-          titulo.classList.add('font-weight-bold','mb-4');
-          
+          titulo.classList.add('font-weight-bold', 'mb-4');
+
           const fecha = document.createElement('span');
           fecha.textContent = evento.fecha;
           fecha.classList.add('mb-1');
-          
+
           const lugar = document.createElement('span');
           lugar.textContent = evento.lugar;
           lugar.classList.add('mb-3', 'mt-auto');
-          
+
           const descripcion = document.createElement('p');
           descripcion.textContent = evento.descripcion;
           descripcion.classList.add('mb-2', 'text-muted');
-          
+
           divTextos.append(titulo, fecha, lugar, descripcion);
           // Asegúrate de que el div se agregue al DOM
           document.body.appendChild(div); // O agrega el div a un contenedor específico
@@ -92,7 +92,7 @@ export class EventosComponent {
 
   // Obtener imagen usando el servicio de multimedia
   // Método para obtener la imagen y mostrarla
-// Método para obtener la imagen y mostrarla con tamaño
+  // Método para obtener la imagen y mostrarla con tamaño
   /*getImagen(imagenId: string): void {
     this.multimediaService.getImagen(imagenId).subscribe((blob: Blob) => {
         // Convertir el Blob a una URL de imagen
