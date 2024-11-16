@@ -90,39 +90,5 @@ export class EventosComponent {
     });
   }
 
-  // Obtener imagen usando el servicio de multimedia
-  // Método para obtener la imagen y mostrarla
-  // Método para obtener la imagen y mostrarla con tamaño
-  /*getImagen(imagenId: string): void {
-    this.multimediaService.getImagen(imagenId).subscribe((blob: Blob) => {
-        // Convertir el Blob a una URL de imagen
-        const imageUrl = URL.createObjectURL(blob);
-        
-        // Crear un nuevo elemento <img>
-        const img = document.createElement('img');
-        
-        // Establecer la URL de la imagen como el atributo 'src' del <img>
-        img.src = imageUrl;
-        
-        // Establecer el tamaño de la imagen (puedes ajustar estos valores a tu gusto)
-        img.style.width = '300px';  // Ancho de la imagen
-        img.style.height = 'auto';  // Altura automática para mantener la proporción
-        img.style.objectFit = 'cover';  // Ajustar el contenido de la imagen al contenedor
-        
-        // También puedes establecer el texto alternativo (opcional)
-        img.alt = "Imagen del evento"; // Texto alternativo
-        
-        // Crear un contenedor para la imagen
-        const div = document.createElement('div');
-        div.classList.add('evento-imagen-container'); // Agregar una clase para el contenedor
-        
-        // Agregar la imagen al contenedor
-        div.appendChild(img);
-        
-        // Finalmente, agregar el contenedor al DOM (por ejemplo, al body o a un contenedor específico)
-        document.body.appendChild(div); // O puedes agregarlo a otro contenedor, como '.eventos-container'
-    });
-  }*/
-
 
 }
