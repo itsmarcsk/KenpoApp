@@ -15,6 +15,8 @@ import { Escuela } from '../models/escuela.model';
 export class PerfilComponent implements OnInit {
   artistaMarcial: ArtistaMarcial  = new ArtistaMarcial(0,"","","", new Date(), "", "", "","","","","");
   escuela: Escuela = new Escuela(0,"","","","");
+  competicion: any;
+  historialCompeticiones: any[] = [];  // Array para almacenar los resultados
   constructor(
     private artistaMarcialService: ArtistaMarcialService,private escuelaService: EscuelaService,private router: Router
   ) {
@@ -27,7 +29,7 @@ export class PerfilComponent implements OnInit {
 
     if (dni) {
       this.obtenerDatosArtistaMarcial(dni);
-      
+      this.getHistorial(dni);
     } else {
       console.error('No se encontró el DNI en el almacenamiento local');
     }
@@ -66,7 +68,72 @@ export class PerfilComponent implements OnInit {
     }
   }
   
+  getHistorial(dni: string) {
+    const contenedor = document.getElementById('historial');  // Asegúrate de tener un contenedor con este ID en el HTML
+    this.artistaMarcialService.getResultadosByArtista(dni).subscribe(
+      (resultados) => {
+        this.historialCompeticiones = resultados;
+        console.log(resultados);
+        this.historialCompeticiones.forEach((historial) =>{
+          this.artistaMarcialService.getCompeticionById(historial.competicion_id).subscribe(
+            (competicion) => {
+              this.competicion = competicion;
+              console.log(competicion)
+              const divCompeticion = document.createElement('div');
+              divCompeticion.classList.add('card', 'mb-3', 'mt-4');  // Clases de Bootstrap para la tarjeta
+
+              // Añadir una clase de Bootstrap para el borde y el padding
+              divCompeticion.style.maxWidth = "540px";
+              divCompeticion.classList.add('shadow', 'rounded');
+
+              // Crear el cuerpo de la tarjeta
+              const divBody = document.createElement('div');
+              divBody.classList.add('card-body');
+
+              // Crear el contenido de cada contenedor
+              const puesto = document.createElement('p');
+              puesto.classList.add('card-text', 'fw-bold');  // Estilo de texto en negrita
+              puesto.textContent = `Puesto: ${historial.puesto}`;
+
+              const lugar = document.createElement('p');
+              lugar.classList.add('card-text');
+              lugar.textContent = `Lugar: ${competicion.lugar}`;
+
+              const fecha = document.createElement('p');
+              fecha.classList.add('card-text');
+              fecha.textContent = `Fecha: ${competicion.fecha}`;
+
+              const nombre = document.createElement('h5');
+              nombre.classList.add('card-title');
+              nombre.textContent = `Nombre: ${competicion.nombre}`;
+              
+              // Añadir todos los párrafos al contenedor de la competición
+              divCompeticion.appendChild(puesto);
+              divCompeticion.appendChild(lugar);
+              divCompeticion.appendChild(fecha);
+              divCompeticion.appendChild(nombre);
+              const contenedor = document.getElementById('historial');
+              // Añadir el contenedor al contenedor principal
+              if (contenedor){
+                contenedor.appendChild(divCompeticion);
+              }
+
+            },
+            (error) => {
+              console.error('Error al obtener los detalles de la competición:', error);
+            }
+          );
+        })
+      },
+      (error) => {
+        console.error('Error al obtener los resultados:', error);
+      }
+    );
+    
+  }
 }
+
+
 
 
 /*{

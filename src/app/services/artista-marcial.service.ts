@@ -62,6 +62,14 @@ export class ArtistaMarcialService {
     );
   }
 
+  getResultadosByArtista(artistaId: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/resultados/artista/${artistaId}`);
+  }
+
+  getCompeticionById(competicionId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/competiciones/${competicionId}`);
+  }
+
   // Método para guardar el DNI en localStorage
   setDni(dni: string): void {
     localStorage.setItem('dni', dni);
