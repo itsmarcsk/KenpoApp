@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtistaMarcial } from '../models/artista-marcial.model';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Router} from '@angular/router';
 import { ArtistaMarcialService } from '../services/artista-marcial.service';
 import { EscuelaService } from '../services/escuela.service';
 import { Escuela } from '../models/escuela.model';
@@ -8,7 +8,7 @@ import { Escuela } from '../models/escuela.model';
 @Component({
   selector: 'app-perfil',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [],
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css']
 })

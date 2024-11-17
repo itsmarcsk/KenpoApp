@@ -11,6 +11,7 @@ import { ChatComponent } from './chat/chat.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { CestaComponent } from './cesta/cesta.component';
 
 export const routes: Routes = [
     {
@@ -41,6 +42,9 @@ export const routes: Routes = [
             },{
                 path: 'tienda',
                 component: TiendaComponent
+            },{
+                path: 'cesta',
+                component: CestaComponent
             },{
                 path:'eventos',
                 component: EventosComponent
