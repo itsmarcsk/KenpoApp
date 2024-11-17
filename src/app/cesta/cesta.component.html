@@ -3,6 +3,7 @@
 
     <h1 class="text-center">MI CESTA</h1>
 
+    <!-- Material en la cesta -->
     <div class="row align-items-center mb-4 shadow p-3 bg-white rounded position-relative">
         <!-- Imagen del Material -->
         <div class="w-auto h-auto">
@@ -10,13 +11,39 @@
                  alt="Imagen del Material" 
                  style="width: 100px; height: 100px;">
         </div>
+        
         <!-- Detalles del Material -->
-        <div class="col-md-8 d-flex flex-column justify-content-center text-center">
-            <h4 class="font-weight-bold mb-4">Guantes de Kenpo</h4>
+        <div class="col-md-6 d-flex flex-column justify-content-center text-center">
+            <h4 class="font-weight-bold mb-2">Guantes de Kenpo</h4>
+            <div class="d-flex align-items-center justify-content-center">
+                <!-- Botón de menos -->
+                <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center" 
+                        style="width: 35px; height: 35px; padding: 0;">-</button>
+                <!-- Cantidad actual -->
+                <input type="text" class="form-control text-center mx-2" value="1" style="width: 50px;" readonly>
+                <!-- Botón de más -->
+                <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center" 
+                        style="width: 35px; height: 35px; padding: 0;">+</button>
+            </div>
         </div>
+        
         <!-- Precio del Material -->
         <div class="col-md-2 d-flex justify-content-end">
             <span class="font-weight-bold text-success">$35.99</span>
+        </div>
+        
+        <!-- Botón de eliminar material -->
+        <div class="col-md-1 d-flex justify-content-end">
+            <button class="btn btn-danger d-flex align-items-center justify-content-center" 
+                    style="width: 35px; height: 35px; padding: 0;">x</button>
+        </div>
+    </div>
+
+    <!-- Botones de acción global -->
+    <div class="row mt-4">
+        <div class="col-12 text-center">
+            <button class="btn btn-success me-3">Comprar cesta</button>
+            <button class="btn btn-danger">Eliminar cesta</button>
         </div>
     </div>
 </div>
