@@ -10,13 +10,13 @@ export class CestaService {
   private apiUrl = 'http://localhost';
   constructor(private http: HttpClient) { }
 
-   // Método para añadir un item a la cesta
+   // Método para crear un item cesta
    addToCesta(item: CestaItem): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/`, item);
+    return this.http.post<any>(`${this.apiUrl}/cesta/`, item);
   }
 
   // Método para añadir material a la cesta
-  addMaterialToCesta(artista_marcial_id: number, material_item: string): Observable<boolean> {
-    return this.http.put<boolean>(`${this.apiUrl}/${artista_marcial_id}/add-material`, material_item);
+  addMaterialToCesta(artista_marcial_id: string, material_item: string): Observable<boolean> {
+    return this.http.put<boolean>(`${this.apiUrl}/${artista_marcial_id}/cesta/add-material`, material_item);
   }
 }
