@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { TiendaService } from '../services/tienda.service';
 import { MultimediaService } from '../services/multimedia.service';
+import { ArtistaMarcialService } from '../services/artista-marcial.service';
+import { CestaService } from '../services/cesta.service';
+import { CestaItem } from '../models/cesta-item.model';
+import { catchError, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-tienda',
@@ -15,12 +19,15 @@ export class TiendaComponent {
 
   constructor(
     private materialesService: TiendaService,
+    private cestaService: CestaService,
+    private artistaMarcialService: ArtistaMarcialService,
     private multimediaService: MultimediaService
   ) { }
 
   ngOnInit(): void {
     this.getmateriales();
     this.getmateriales2();
+    
   }
 
   private getmateriales() {
@@ -107,7 +114,34 @@ export class TiendaComponent {
   }
 
   //FIXME metodo para añadir objetos a la cesta
-  anadirACesta(id : string){
-    console.log("hola " + id);
+  anadirACesta(materialId: string) {
+    // Obtener el DNI del artista marcial
+    const artistaMarcialId = this.artistaMarcialService.getDni();
+  
+    if (!artistaMarcialId) {
+      console.error('No se pudo obtener el ID del artista marcial');
+      return;
+    }
+    
+    
+    // Crear un objeto `CestaItem` inicial
+    const item: CestaItem = {
+      artista_marcial_id: artistaMarcialId,
+      materiales: [
+        {
+          material_id: materialId,
+          cantidad: 1
+        }
+      ]
+    };
+  
+    this.cestaService.addMaterialToCesta(artistaMarcialId, materialId).subscribe(
+      response =>{
+        alert('Cesta actualizada.');
+      },
+      error =>{
+        
+      }
+    )
   }
 }
