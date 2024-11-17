@@ -1,0 +1,52 @@
+/* Fondo gris para los carruseles */
+.carousel {
+    background-color: #A9A9A9; /* Gris */
+}
+h1, h2 {
+    color: rgb(0, 0, 0);
+}
+
+/* Color negro para los textos de los títulos */
+h5, p {
+    color: rgb(255, 255, 255);
+}
+
+/* Personalización de los indicadores (botones de control) */
+.carousel-indicators button {
+    background-color: black;
+}
+
+.carousel-indicators .active {
+    background-color: #ffcc00; /* Amarillo para el botón activo */
+}
+
+/* Personalización de las leyendas dentro de los carruseles */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.418); /* Fondo blanco semitransparente */
+}
+
+/* Personalización de los controles (anterior y siguiente) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black; /* Iconos de control en negro */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    color: black; /* Botones de control en negro */
+}
+
+/* Ajustes para mejorar la visibilidad en dispositivos pequeños */
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que las imágenes cubran completamente el contenedor */
+}
+
+/* Asegura que el texto de los títulos sea legible en pantallas pequeñas */
+@media (max-width: 576px) {
+    .carousel-caption h5,
+    .carousel-caption p {
+        font-size: 14px; /* Tamaño de texto más pequeño en móviles */
+    }
+}
