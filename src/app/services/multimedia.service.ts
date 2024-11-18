@@ -21,7 +21,6 @@ export class MultimediaService {
   // Obtener un video por su ID
   getVideo(videoId: string): Observable<Blob> {
     const url = `${this.apiUrl}/videos/${videoId}`;
-    const headers = new HttpHeaders().set('Accept', 'video/*'); // Aseguramos que acepte videos
-    return this.http.get(url, { headers, responseType: 'blob' });
+    return this.http.get(url, { responseType: 'blob' });
   }
 }

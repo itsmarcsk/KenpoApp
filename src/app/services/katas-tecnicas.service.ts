@@ -9,14 +9,15 @@ export class KatasTecnicasService {
   private apiUrl = 'http://localhost';
   constructor(private http: HttpClient) {}
 
-  getKatas(): Observable<any[]> {
+  getKatas(): Observable<{katas: any[]}> {
     const url = `${this.apiUrl}/katas/`;
-    return this.http.get<any[]>(url);
+    return this.http.get<{katas: any[]}>(url);
   }
   
-  getTecnicas(): Observable<any[]> {
+  getTecnicas(): Observable<{ tecnicas: any[] }> {
     const url = `${this.apiUrl}/tecnicas/`;
-    return this.http.get<any[]>(url);
+    return this.http.get<{ tecnicas: any[] }>(url);
   }
+  
   
 }

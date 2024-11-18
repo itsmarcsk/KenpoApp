@@ -6,11 +6,6 @@ h1, h2 {
     color: rgb(0, 0, 0);
 }
 
-/* Color negro para los textos de los títulos */
-h5, p {
-    color: rgb(255, 255, 255);
-}
-
 /* Personalización de los indicadores (botones de control) */
 .carousel-indicators button {
     background-color: black;
@@ -18,11 +13,6 @@ h5, p {
 
 .carousel-indicators .active {
     background-color: #ffcc00; /* Amarillo para el botón activo */
-}
-
-/* Personalización de las leyendas dentro de los carruseles */
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.418); /* Fondo blanco semitransparente */
 }
 
 /* Personalización de los controles (anterior y siguiente) */
