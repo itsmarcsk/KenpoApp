@@ -48,7 +48,6 @@ export class InicioComponent {
               iframe.setAttribute('src', url);
               iframe.setAttribute('frameborder', '0');
               iframe.setAttribute('allowfullscreen', '');
-              iframe.setAttribute('autoplay', '0');
               iframe.setAttribute('controls', '');
               iframe.setAttribute('autoplay', 'false');
               iframe.setAttribute('autoplay', '0');
