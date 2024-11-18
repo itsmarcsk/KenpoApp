@@ -39,7 +39,7 @@ export class InicioComponent {
             iframe.classList.add('d-block', 'mx-auto', 'mt-4');
             iframe.style.width = '400px'; 
             iframe.style.height = '400px';
-            iframe.removeAttribute("autoplay");
+
             
             this.multimediaService.getVideo(kata.id_video).subscribe((video: Blob) => {
               console.log(video);
@@ -49,8 +49,7 @@ export class InicioComponent {
               iframe.setAttribute('frameborder', '0');
               iframe.setAttribute('allowfullscreen', '');
               iframe.setAttribute('controls', '');
-              iframe.setAttribute('autoplay', 'false');
-              iframe.setAttribute('autoplay', '0');
+
               console.log(iframe);
             })
 
