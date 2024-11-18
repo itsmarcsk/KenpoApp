@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 import { IndexComponent } from './index/index.component';
 import { InicioComponent } from './inicio/inicio.component';
-import { ChatComponent } from './chat/chat.component';
+
 import { TiendaComponent } from './tienda/tienda.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { PerfilComponent } from './perfil/perfil.component';
@@ -37,9 +37,6 @@ export const routes: Routes = [
                 path:'inicio',
                 component: InicioComponent
             },{
-                path:'chat',
-                component: ChatComponent
-            },{
                 path: 'tienda',
                 component: TiendaComponent
             },{
@@ -56,6 +53,10 @@ export const routes: Routes = [
     },{
         path:'',
         redirectTo:'index/login',
+        pathMatch:'full'
+    },{
+        path:'home',
+        redirectTo:'home/inicio',
         pathMatch:'full'
     },{
         path:'**',
