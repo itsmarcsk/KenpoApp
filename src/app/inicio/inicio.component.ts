@@ -150,7 +150,7 @@ export class InicioComponent {
               carouselItem.classList.add('carousel-item');
               // Crear el elemento de imagen
               const img = document.createElement('img');
-              img.classList.add('d-block', 'mx-auto');
+              img.classList.add('d-block', 'mx-auto', 'mt-4');
               img.alt = tecnica.nombre;
               img.style.width = '400px';
               img.style.height = '400px';
